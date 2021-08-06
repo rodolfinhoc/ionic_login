@@ -41,7 +41,7 @@ export class AppComponent {
       if (res== null){
         this.navCtrl.navigateRoot('/login');
       }else{
-        this.navCtrl.navigateRoot('/home');
+        this.navCtrl.navigateRoot('/home/Inbox');
       }
     });
   }
