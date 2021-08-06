@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { ToastController, LoadingController, AlertController, NavController } from '@ionic/angular';
 import { AccessProviders } from '../../providers/access-providers';
 import { Storage } from '@ionic/storage';
+import {  MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -23,7 +24,8 @@ export class HomePage implements OnInit {
     private accsPrvds: AccessProviders,
     private storage: Storage,
     public navCtrl: NavController,
-    public activatedRoute: ActivatedRoute
+    public activatedRoute: ActivatedRoute,
+    public menuCtrl: MenuController
   ) { }
 
   ngOnInit() {
@@ -36,6 +38,9 @@ export class HomePage implements OnInit {
       this.name = this.datastorage.your_name;
   });
   }
+  ionViewWillEnter() {
+    this.menuCtrl.enable(true);
+   }
 
   async prosesLogout(){
     this.storage.clear();

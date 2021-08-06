@@ -3,6 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { ToastController, LoadingController, AlertController, NavController } from '@ionic/angular';
 import { AccessProviders } from '../../providers/access-providers';
 import { Storage } from '@ionic/storage';
+import {  MenuController } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-login',
@@ -22,7 +24,8 @@ export class LoginPage implements OnInit {
     private alertCtrl: AlertController,
     private accsPrvds: AccessProviders,
     private storage: Storage,
-    public navCtrl: NavController
+    public navCtrl: NavController,
+    public menuCtrl: MenuController
   ) { }
 
   ngOnInit() {
@@ -31,6 +34,10 @@ export class LoginPage implements OnInit {
   ionViewDidEnter(){
     this.disabledButton = false;
   }
+  ionViewWillEnter() {
+    this.menuCtrl.enable(false);
+   }
+
   async tryLogin(){
     if(this.email_address == ""){
       this.presentToast('Campo email é obrigatório!');
