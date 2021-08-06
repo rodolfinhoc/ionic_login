@@ -1,0 +1,90 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>{{ CreatePDV }}</ion-title><ion-toggle slot='end' (ionChange)='toggleTheme($event)' id="toggleDarkMode"></ion-toggle>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-header collapse="condense">
+        <ion-toolbar>
+            <ion-title size="large">{{ CreatePDV }}</ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-card>
+        <ion-card-header>
+            <ion-row>
+                <ion-col size="6" size-md>
+                    <ion-card-subtitle>Data de Emissão:</ion-card-subtitle>
+                </ion-col>
+                <ion-col size="6" size-md>
+                    <ion-badge color="medium" style="float: right; width: 60%; height: 50%; font-size: 12px;">
+                        <ion-datetime cancelText="Cancelar" doneText="Salvar" displayFormat="DD/MM/YYYY" style="padding-top: 0; padding-right: 10px;" value="{{formattedDate}}"></ion-datetime>
+                    </ion-badge>
+                </ion-col>
+                <ion-col size="7" size-md>
+                    <ion-card-title>Contrato de Venda</ion-card-title>
+                </ion-col>
+                <ion-col size="5" size-md>
+                    <ion-badge color="warning" style="float: right;">44</ion-badge>
+                </ion-col>
+            </ion-row>
+        </ion-card-header>
+
+        <ion-card-content>
+            <ion-row>
+                <ion-col size="6">
+                    <ion-item>
+                        <ion-label position="floating">Comprador</ion-label>
+                        <ion-input></ion-input>
+                    </ion-item>
+                </ion-col>
+                <ion-col size="6">
+                    <ion-item>
+                        <ion-label position="floating">CNPJ/MF</ion-label>
+                        <ion-input></ion-input>
+                    </ion-item>
+                </ion-col>
+                <ion-col size="6">
+                    <ion-item>
+                        <ion-label position="floating">Insc.Estadual</ion-label>
+                        <ion-input></ion-input>
+                    </ion-item>
+                </ion-col>
+                <ion-col size="6">
+                    <ion-item>
+                        <ion-label position="floating">Endereço</ion-label>
+                        <ion-input></ion-input>
+                    </ion-item>
+                </ion-col>
+                <ion-col size="6">
+                    <ion-item>
+                        <ion-label position="floating">Municipio</ion-label>
+                        <ion-input></ion-input>
+                    </ion-item>
+                </ion-col>
+                <ion-col size="6">
+                    <ion-item>
+                        <ion-label position="floating">Estado</ion-label>
+                        <ion-input></ion-input>
+                    </ion-item>
+                </ion-col>
+                <ion-col size="6">
+                    <ion-item>
+                        <ion-label position="floating">Cep.:</ion-label>
+                        <ion-input></ion-input>
+                    </ion-item>
+                </ion-col>
+                <ion-col size="6">
+                    <ion-item>
+                        <ion-label position="floating">Tel.:</ion-label>
+                        <ion-input></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
